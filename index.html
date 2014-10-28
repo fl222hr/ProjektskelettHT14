@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -44,11 +44,11 @@
 			<div class="slides">
 			
 				<section> 
-					<h1>CSS3 och kompabilitet med Webbläsare</h1>
+					<h1>Kompabilitet med Webbläsare</h1>
 					<h2>Slutpresentation i Webteknisk Introduktion</h2>
 					
 					<p>
-						<small>Created by Fredrik L.</small>
+						<small>Skapad av Fredrik L.</small>
 					</p>
 				</section>
 				
@@ -56,7 +56,7 @@
 					<h2>Bakgrund</h2>
 					<p>
 					Under Laboration 5 fick vi bekanta oss med en del nya funktioner inom CSS. 
-					Då blev det tydligt att resultatet skulle skilja sig beroende på vilken webläsare man använde.<br/><br/> 
+					Då blev det tydligt att resultatet skulle skilja sig beroende på vilken webbläsare man använde.<br/><br/> 
 					Det jag skrev och testade i Firefox fungerade inte i Internet Explorer.
 					</p>
 				</section>
@@ -66,7 +66,7 @@
 					<p>
 					Handledarna till kursen refererade till en sida: 
 					<a href="http://caniuse.com">CanIUse.com</a> 
-					som tydligt illusterade problematiken med att det finns så många olika webläsare.
+					som tydligt illusterade problematiken med att det finns så många olika webbläsare.
 					<br/>
 					<img width="512" height="256" src="images/CanIUse.png" alt="Screenshot of CanIUse">
 					<br/>
@@ -81,11 +81,90 @@
 					<a href="http://caniuse.com">CanIUse.com</a> 
 					har jag sammanställt denna bild för att illustrera användandet av olika webläsare
 					<br/>
-					<img width="512" height="256" src="images/CanIUse.png" alt="Screenshot of CanIUse">
+					<img width="750" height="490" src="images/BrowserUse.png" alt="Screenshot of CanIUse">
 					</p>
 					</section>
+					
+					<section>
+					<h2>Varför är detta ett problem?</h2>
+					<ul>
+						<li>Krävs mycket testning</li>
+						<li>Omständig kod</li>
+						<li>Funktioner för enstaka webbläsare</li>
+					</ul>
+				</section>
+				
+					<section> 
+					<h2>Exempel - CSS3 Transforms</h2>
+					<p>
+					Ett exempel från Laboration 5 är CSS3 Transforms. Detta stöds av många webbläsare, antingen helt eller genom ett prefix
+					<br/>
+					<img width="750" height="490" src="images/Transforms.png" alt="Screenshot of CanIUse">
+					</p>
+					</section>
+					
+
+					
+					
+					<section data-markdown>
+
+					<script type="text/template">
+					##Omständig kod
+					
+					För att få nya funktioner att fungera på vissa webbläsare måste man använda prefix, vilket kan bli lite omständig
 			
+						
+
+						```
+				a:hover{
+      			-ms-transform: scale(2) rotate(0deg) translate(50px);
+      			-webkit-transform: scale(2) rotate(0deg) translate(50px);
+      			transform: scale(2) rotate(0deg) translate(50px);
+      			
+      			-webkit-transition: all 0.5s ease-out;
+      			transition: all 0.5s ease-out;
+      			
+      			-webkit-box-shadow: 20px 20px 50px #888888;
+      			box-shadow: 20px 20px 50px #888888;
+      		
+      			z-index: 1;
+				}
+						
+						```
+					</script>
+				</section>
 			
+					<section> 
+					<h2>Exempel - CSS Variables</h2>
+					<p>
+					Att kunna definiera variabler i CSS är något som jag saknat. Tydligen finns detta, men är enbart kompatibelt med Firefox
+					<br/>
+					<img width="750" height="490" src="images/Variables.png" alt="Screenshot of CanIUse">
+					</p>
+					</section>
+					
+					<section>
+					<h2>Vad kan man göra åt detta?</h2>
+					<ul>
+						<li>Leva med det</li>
+						<li>CanIUse.com är en väldigt bra guide</li>
+						<li>Vänta på att bra funktioner ta fäste</li>
+					</ul>
+				</section>
+					
+					<section> 
+					<h2>Exempel - CSS3 Transforms</h2>
+					<p>
+					<img width="800" height="640" src="images/CanIUseExample.png" alt="Screenshot of CanIUse">
+					</p>
+					</section>	
+					
+					<section> 
+					<h1>Tack för mig</h1>
+					</section>	
+					
+					
+					
 				<section>
 					<h1>Reveal.js</h1>
 					<h3>HTML Presentations Made Easy</h3>
